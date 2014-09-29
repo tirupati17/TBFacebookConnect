@@ -1,25 +1,25 @@
 //
-//  AppDelegateFacebookConnect.m
-//  https://github.com/tirupati17/AppDelegateFacebookConnect
+//  TBFacebookConnect.m
+//  https://github.com/tirupati17/TBFacebookConnect
 //
 //  Created by Tirupati Balan on 26/09/14.
 //  Copyright (c) 2014 CelerApps. All rights reserved.
 //
 
-#import "AppDelegateFacebookConnect.h"
+#import "TBFacebookConnect.h"
 
-@implementation AppDelegateFacebookConnect
+@implementation TBFacebookConnect
 
 @synthesize facebookCallbackBlock;
 @synthesize responseData;
 
-AppDelegateFacebookConnect *appDelegateFacebookConnect = nil;
+TBFacebookConnect *appDelegateFacebookConnect = nil;
 
-+ (AppDelegateFacebookConnect *)initalizeAppDelegateFacebookConnectWithFacebookId:(NSString *)idString {
++ (TBFacebookConnect *)initializeObjectWithFacebookId:(NSString *)idString {
     if (appDelegateFacebookConnect)
         return appDelegateFacebookConnect;
     
-    appDelegateFacebookConnect = [[AppDelegateFacebookConnect alloc] initWithFacebookId:idString];
+    appDelegateFacebookConnect = [[TBFacebookConnect alloc] initWithFacebookId:idString];
     return appDelegateFacebookConnect;
 }
 
@@ -30,7 +30,7 @@ AppDelegateFacebookConnect *appDelegateFacebookConnect = nil;
     return self;
 }
 
-- (void)facebookLoginWithBlock:(FacebookCallbackBlock)block {
+- (void)loginWithBlock:(FacebookCallbackBlock)block {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         [self facebookNativeLoginWithCallback:block];
     } else {

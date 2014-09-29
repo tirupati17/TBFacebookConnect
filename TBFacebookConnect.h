@@ -1,6 +1,6 @@
 //
-//  AppDelegateFacebookConnect.h
-//  https://github.com/tirupati17/AppDelegateFacebookConnect
+//  TBFacebookConnect.h
+//  https://github.com/tirupati17/TBFacebookConnect
 //
 //  Created by Tirupati Balan on 26/09/14.
 //  Copyright (c) 2014 CelerApps. All rights reserved.
@@ -14,7 +14,7 @@
 //Using SDK
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface AppDelegateFacebookConnect : UIResponder {
+@interface TBFacebookConnect : UIResponder {
     
 }
 typedef void (^FacebookCallbackBlock)(BOOL status, NSString *messageBody, NSString *messageTitle, NSString *accessToken);
@@ -22,7 +22,7 @@ typedef void (^FacebookCallbackBlock)(BOOL status, NSString *messageBody, NSStri
 @property (nonatomic, retain) NSMutableData *responseData;
 @property (nonatomic, retain) NSString *facebookId;
 
-- (void)facebookLoginWithBlock:(FacebookCallbackBlock)block;
+- (void)loginWithBlock:(FacebookCallbackBlock)block;
 
 //Using Native
 @property (strong, nonatomic) IBOutlet ACAccountStore *accountStore;
@@ -33,8 +33,8 @@ typedef void (^FacebookCallbackBlock)(BOOL status, NSString *messageBody, NSStri
 - (void)facebookSDKLoginWithCallback:(FacebookCallbackBlock)block;
 
 //Default Initialization
-+ (AppDelegateFacebookConnect *)initalizeAppDelegateFacebookConnectWithFacebookId:(NSString *)idString;
-extern AppDelegateFacebookConnect *appDelegateFacebookConnect;
++ (TBFacebookConnect *)initializeObjectWithFacebookId:(NSString *)idString;
+extern TBFacebookConnect *appDelegateFacebookConnect;
 
 @end
 
